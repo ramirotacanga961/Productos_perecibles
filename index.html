@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compra frutas y verduras frescas en Productos Perecibles.">
+    <title>Productos Perecibles | Frescura para tu hogar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a class="logo" href="#inicio">🥬 Productos Perecibles</a>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <a class="cart" href="#productos">🛒 Carrito <span id="cart-count">0</span></a>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-text">
+                <p class="tag">FRESCO, NATURAL Y DEL DÍA</p>
+                <h1>Del campo a tu mesa, <span>frescura todos los días.</span></h1>
+                <p>Encuentra frutas y verduras frescas para preparar comidas deliciosas y saludables.</p>
+                <a class="button" href="#productos">Ver productos</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=85" alt="Variedad de frutas y verduras frescas">
+        </section>
+
+        <section class="products-section" id="productos">
+            <div class="section-heading">
+                <p class="tag">NUESTRO CATÁLOGO</p>
+                <h2>Productos frescos para ti</h2>
+                <p>Elige tus favoritos y descubre nuestros productos.</p>
+            </div>
+            <div class="filters">
+                <input type="search" id="search" placeholder="Buscar un producto..." aria-label="Buscar productos">
+                <select id="category" aria-label="Filtrar por categoría">
+                    <option value="todos">Todas las categorías</option>
+                    <option value="frutas">Frutas</option>
+                    <option value="verduras">Verduras</option>
+                </select>
+            </div>
+            <div class="product-grid" id="product-list">
+                <article class="product-card" data-name="manzana" data-category="frutas">
+                    <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=600&q=80" alt="Manzanas rojas">
+                    <div class="product-info"><span class="category">Frutas</span><h3>Manzana roja</h3><p>Fresca, crujiente y dulce.</p><div class="product-bottom"><strong>S/ 4.50 <small>/ kg</small></strong><button class="add-button" data-product="Manzana roja" aria-label="Añadir manzana al carrito">+</button></div></div>
+                </article>
+                <article class="product-card" data-name="platano banana" data-category="frutas">
+                    <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80" alt="Plátanos maduros">
+                    <div class="product-info"><span class="category">Frutas</span><h3>Plátano</h3><p>Ideal para desayunos y meriendas.</p><div class="product-bottom"><strong>S/ 3.20 <small>/ kg</small></strong><button class="add-button" data-product="Plátano" aria-label="Añadir plátano al carrito">+</button></div></div>
+                </article>
+                <article class="product-card" data-name="naranja" data-category="frutas">
+                    <img src="https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=600&q=80" alt="Naranjas frescas">
+                    <div class="product-info"><span class="category">Frutas</span><h3>Naranja</h3><p>Jugosa y llena de sabor.</p><div class="product-bottom"><strong>S/ 3.80 <small>/ kg</small></strong><button class="add-button" data-product="Naranja" aria-label="Añadir naranja al carrito">+</button></div></div>
+                </article>
+                <article class="product-card" data-name="tomate" data-category="verduras">
+                    <img src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=600&q=80" alt="Tomates rojos">
+                    <div class="product-info"><span class="category">Verduras</span><h3>Tomate</h3><p>Perfecto para ensaladas y guisos.</p><div class="product-bottom"><strong>S/ 3.50 <small>/ kg</small></strong><button class="add-button" data-product="Tomate" aria-label="Añadir tomate al carrito">+</button></div></div>
+                </article>
+                <article class="product-card" data-name="zanahoria" data-category="verduras">
+                    <img src="https://images.unsplash.com/photo-1445282768818-728615cc910a?auto=format&fit=crop&w=600&q=80" alt="Zanahorias frescas">
+                    <div class="product-info"><span class="category">Verduras</span><h3>Zanahoria</h3><p>Fresca y versátil para tus recetas.</p><div class="product-bottom"><strong>S/ 2.80 <small>/ kg</small></strong><button class="add-button" data-product="Zanahoria" aria-label="Añadir zanahoria al carrito">+</button></div></div>
+                </article>
+                <article class="product-card" data-name="lechuga" data-category="verduras">
+                    <img src="https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?auto=format&fit=crop&w=600&q=80" alt="Lechuga verde">
+                    <div class="product-info"><span class="category">Verduras</span><h3>Lechuga</h3><p>Hojas frescas para tus ensaladas.</p><div class="product-bottom"><strong>S/ 2.50 <small>/ unidad</small></strong><button class="add-button" data-product="Lechuga" aria-label="Añadir lechuga al carrito">+</button></div></div>
+                </article>
+            </div>
+            <p id="no-results" class="no-results" hidden>No se encontraron productos.</p>
+            <p class="notice">Precios referenciales en soles peruanos. Pueden variar según temporada y disponibilidad.</p>
+        </section>
+
+        <section class="about" id="nosotros">
+            <div><p class="tag">NUESTRO COMPROMISO</p><h2>Calidad y frescura en cada compra</h2><p>Seleccionamos productos perecibles pensando en tu hogar, para que disfrutes alimentos frescos y de calidad cada día.</p></div>
+            <div class="benefits"><p>🌱 <strong>Selección cuidadosa</strong><br>Productos escogidos con atención.</p><p>🥗 <strong>Alimentación natural</strong><br>Más frescura para tus comidas.</p><p>🤝 <strong>Atención cercana</strong><br>Estamos aquí para ayudarte.</p></div>
+        </section>
+        <section class="contact" id="contacto"><h2>¿Tienes alguna consulta?</h2><p>Comunícate con nosotros para consultar disponibilidad y pedidos.</p><a class="button" href="mailto:contacto@productosperecibles.com">Contáctanos</a></section>
+    </main>
+    <footer><p>© 2026 Productos Perecibles. Todos los derechos reservados.</p><p>Frescura y calidad para tu hogar.</p></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
